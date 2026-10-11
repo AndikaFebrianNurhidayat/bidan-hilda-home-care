@@ -1,0 +1,512 @@
+
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Kenali Bidan Hilda, layanan home care dan home service untuk informasi pemeriksaan kesehatan serta konsultasi ibu dan keluarga.">
+  <title>Tentang Kami | Bidan Hilda</title>
+  <link rel="stylesheet" href="style.css">
+
+  <style>
+    /* Foto profil */
+    .about-photo {
+      position: relative;
+      min-height: 360px;
+      overflow: hidden;
+      border-radius: 24px;
+    }
+
+    .about-photo > img {
+      display: block;
+      width: 100%;
+      height: 100%;
+      min-height: 360px;
+      object-fit: cover;
+      border-radius: inherit;
+    }
+
+    .about-photo .about-note {
+      position: absolute;
+      left: 20px;
+      right: 20px;
+      bottom: 20px;
+      z-index: 2;
+    }
+
+    /* Foto layanan */
+    .about-service-grid {
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: 24px;
+      align-items: stretch;
+    }
+
+    .about-image-card {
+      padding: 0;
+      overflow: hidden;
+      height: 100%;
+    }
+
+    .service-card-image {
+      display: block;
+      width: 100%;
+      height: 220px;
+      object-fit: cover;
+    }
+
+    .service-card-content {
+      padding: 22px;
+    }
+
+    .service-card-content h3 {
+      margin-top: 0;
+    }
+
+    .service-card-content p {
+      line-height: 1.7;
+    }
+
+    .service-card-content a {
+      display: inline-block;
+      margin-top: 10px;
+    }
+
+    @media (max-width: 900px) {
+      .about-service-grid {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+      }
+    }
+
+    @media (max-width: 600px) {
+      .about-service-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .service-card-image {
+        height: 220px;
+      }
+
+      .about-photo,
+      .about-photo > img {
+        min-height: 300px;
+      }
+    }
+  </style>
+</head>
+
+<body>
+
+  <!-- NAVBAR -->
+  <header class="header">
+    <div class="container navbar">
+      <a class="brand" href="index.html">
+        <span class="brand-icon">♡</span>
+        <span>
+          Bidan Hilda
+          <small>HOME CARE & HOME SERVICE</small>
+        </span>
+      </a>
+
+      <button class="menu-toggle" id="menuToggle"
+        aria-label="Buka menu" aria-expanded="false" type="button">☰</button>
+
+      <nav class="nav-links" id="navLinks">
+        <a href="index.html">Beranda</a>
+
+        <div class="dropdown">
+          <a href="layanan.html" class="dropdown-toggle" aria-expanded="false">
+            Layanan <span class="dropdown-arrow">⌄</span>
+          </a>
+
+          <div class="dropdown-menu">
+            <a href="cek-gula-darah.html">Cek Gula Darah</a>
+            <a href="cek-kolesterol.html">Cek Kolesterol</a>
+            <a href="cek-asam-urat.html">Cek Asam Urat</a>
+            <a href="cek-tekanan-darah.html">Cek Tekanan Darah</a>
+            <a href="konsultasi-kesehatan.html">Konsultasi Kesehatan</a>
+            <a href="pemeriksaan-darah-kehamilan.html">Pemeriksaan Darah Kehamilan</a>
+            <a href="konsultasi-kebidanan.html">Konsultasi Kebidanan</a>
+            <a href="kesehatan-ibu-anak.html">Kesehatan Ibu dan Anak</a>
+            <a href="konsultasi-kesehatan-reproduksi.html">Konsultasi Kesehatan Reproduksi</a>
+            <a href="layanan.html" class="dropdown-all">Lihat Semua Layanan →</a>
+          </div>
+        </div>
+
+        <a href="tentang-kami.html" class="active">Tentang Kami</a>
+        <a href="cara-pemesanan.html">Cara Pemesanan</a>
+        <a href="faq.html">FAQ</a>
+      </nav>
+
+      <a href="#" data-wa class="btn nav-contact">Hubungi Kami ↗</a>
+    </div>
+  </header>
+
+  <main>
+
+    <!-- HERO -->
+    <section class="hero">
+      <div class="container hero-grid">
+        <div>
+          <span class="badge">♡ Tentang Bidan Hilda</span>
+
+          <h1>
+            Pelayanan yang Dekat dan <em>Peduli</em>
+          </h1>
+
+          <p>
+            Bidan Hilda hadir untuk membantu masyarakat mendapatkan
+            informasi layanan pemeriksaan kesehatan dan konsultasi,
+            khususnya yang berkaitan dengan kesehatan ibu dan anak.
+          </p>
+
+          <p>
+            Kami mengutamakan komunikasi yang ramah, informasi yang
+            mudah dipahami, serta konfirmasi layanan sebelum kunjungan.
+          </p>
+
+          <div class="hero-actions">
+            <a href="layanan.html" class="btn">Lihat Layanan →</a>
+            <a href="#" data-wa class="btn btn-outline">Hubungi Kami</a>
+          </div>
+
+          <div class="trust">
+            <span>✓ Komunikasi yang ramah</span>
+            <span>✓ Informasi yang jelas</span>
+            <span>✓ Konfirmasi jadwal</span>
+          </div>
+        </div>
+
+        <div class="hero-visual">
+          <div class="hero-circle">
+            <div class="hero-emoji">🩺</div>
+          </div>
+
+          <div class="float-card float-top">
+            <strong>♡ Bidan Hilda</strong>
+            <span>Peduli kesehatan keluarga</span>
+          </div>
+
+          <div class="float-card float-bottom">
+            <strong>🏡 Home Care</strong>
+            <span>Nyaman dan praktis</span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- PROFIL KAMI -->
+    <section class="section" id="profil">
+      <div class="container about-grid">
+
+        <div class="about-visual about-photo">
+          <img
+            src="images/bidan-hilda.jpeg"
+            alt="Foto profil Bidan Hilda"
+            loading="lazy"
+          >
+
+          <div class="about-note">
+            <strong>Bidan Hilda</strong>
+            <p>Home Care &amp; Home Service</p>
+          </div>
+        </div>
+
+        <div>
+          <span class="badge">Profil Kami</span>
+          <h2>Mengenal Bidan Hilda Lebih Dekat</h2>
+
+          <p>
+            Bidan Hilda merupakan brand layanan home care dan home
+            service yang menyediakan informasi mengenai pemeriksaan
+            kesehatan serta konsultasi bagi masyarakat, khususnya
+            terkait kesehatan ibu dan anak.
+          </p>
+
+          <p>
+            Website ini dibuat untuk memudahkan pengunjung mengenali
+            pilihan layanan, membaca informasi awal, dan menghubungi
+            kami untuk menanyakan biaya, persiapan, serta ketersediaan
+            jadwal layanan.
+          </p>
+
+          <p>
+            Setiap layanan perlu dikonfirmasi terlebih dahulu agar
+            pengunjung memperoleh informasi yang sesuai dengan kebutuhan
+            dan jenis layanan yang tersedia.
+          </p>
+
+          <a href="layanan.html" class="btn">Jelajahi Layanan →</a>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- NILAI KAMI -->
+    <section class="section section-soft">
+      <div class="container">
+        <div class="section-heading">
+          <span class="badge">Nilai Kami</span>
+          <h2>Hal yang Kami Utamakan</h2>
+          <p>
+            Kami ingin membantu pengunjung mendapatkan informasi
+            layanan kesehatan yang mudah dipahami sebelum melakukan
+            pemesanan atau konsultasi.
+          </p>
+        </div>
+
+        <div class="service-grid">
+          <article class="service-card">
+            <div class="service-icon">♡</div>
+            <h3>Ramah dan Peduli</h3>
+            <p>
+              Mengutamakan komunikasi yang sopan, ramah, dan
+              memperhatikan kebutuhan setiap pengunjung.
+            </p>
+          </article>
+
+          <article class="service-card">
+            <div class="service-icon">✿</div>
+            <h3>Informasi yang Jelas</h3>
+            <p>
+              Menyediakan informasi layanan agar pengunjung lebih
+              mudah memahami pilihan yang tersedia.
+            </p>
+          </article>
+
+          <article class="service-card">
+            <div class="service-icon">⌂</div>
+            <h3>Kenyamanan</h3>
+            <p>
+              Membantu pengunjung menanyakan pilihan home service,
+              area kunjungan, dan jadwal sebelum membuat janji.
+            </p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- LAYANAN KAMI DENGAN FOTO -->
+    <section class="section">
+      <div class="container">
+        <div class="section-heading">
+          <span class="badge">Layanan Kami</span>
+          <h2>Berbagai Pilihan Layanan Kesehatan</h2>
+          <p>
+            Temukan informasi pemeriksaan dan konsultasi sesuai
+            kebutuhan Anda dan keluarga.
+          </p>
+        </div>
+
+        <div class="service-grid about-service-grid">
+
+          <!-- FOTO 1: PERAWATAN BAYI -->
+          <article class="service-card about-image-card">
+            <img
+              class="service-card-image"
+              src="images/perawatan-bayi.jpg"
+              alt="Bidan merawat bayi baru lahir"
+              loading="lazy"
+            >
+            <div class="service-card-content">
+              <h3>Perawatan Bayi Baru Lahir</h3>
+              <p>
+                Informasi perawatan dan kebutuhan kesehatan bayi baru
+                lahir bersama tenaga kesehatan.
+              </p>
+              <a href="kesehatan-ibu-anak.html">Detail Layanan →</a>
+            </div>
+          </article>
+
+          <!-- FOTO 2: KONSULTASI IBU HAMIL -->
+          <article class="service-card about-image-card">
+            <img
+              class="service-card-image"
+              src="images/Konsultasi-ibu-hamil.jpg"
+              alt="Konsultasi ibu hamil dengan bidan"
+              loading="lazy"
+            >
+            <div class="service-card-content">
+              <h3>Konsultasi Ibu Hamil</h3>
+              <p>
+                Informasi konsultasi kehamilan dan persiapan yang dapat
+                ditanyakan kepada bidan.
+              </p>
+              <a href="konsultasi-kebidanan.html">Detail Layanan →</a>
+            </div>
+          </article>
+
+          <!-- FOTO 3: CEK GULA DARAH -->
+          <article class="service-card about-image-card">
+            <img
+              class="service-card-image"
+              src="images/Pemeriksaan-Gula-Darah.jpg"
+              alt="Pemeriksaan gula darah menggunakan alat glukometer"
+              loading="lazy"
+            >
+            <div class="service-card-content">
+              <h3>Pemeriksaan Gula Darah</h3>
+              <p>
+                Informasi layanan pemeriksaan gula darah dan cara
+                menanyakan persiapannya.
+              </p>
+              <a href="cek-gula-darah.html">Detail Layanan →</a>
+            </div>
+          </article>
+
+          <!-- FOTO 4: CEK KOLESTEROL -->
+          <article class="service-card about-image-card">
+            <img
+              class="service-card-image"
+              src="images/Pemeriksaan-Kolesterol.jpg"
+              alt="Perlengkapan pemeriksaan kolesterol"
+              loading="lazy"
+            >
+            <div class="service-card-content">
+              <h3>Pemeriksaan Kolesterol</h3>
+              <p>
+                Kenali informasi awal mengenai pemeriksaan kolesterol
+                dan konfirmasi layanan.
+              </p>
+              <a href="cek-kolesterol.html">Detail Layanan →</a>
+            </div>
+          </article>
+
+          <!-- FOTO 5: KONSULTASI IBU DAN ANAK -->
+          <article class="service-card about-image-card">
+            <img
+              class="service-card-image"
+              src="images/konsultasi-ibu-anak.jpg"
+              alt="Bidan berkonsultasi dengan ibu dan anak"
+              loading="lazy"
+            >
+            <div class="service-card-content">
+              <h3>Konsultasi Kesehatan Ibu dan Anak</h3>
+              <p>
+                Informasi konsultasi dan kebutuhan kesehatan ibu
+                serta anak.
+              </p>
+              <a href="kesehatan-ibu-anak.html">Detail Layanan →</a>
+            </div>
+          </article>
+
+        </div>
+
+        <div style="text-align: center; margin-top: 32px;">
+          <a href="layanan.html" class="btn">Lihat Semua 9 Layanan →</a>
+        </div>
+      </div>
+    </section>
+
+    <!-- CARA KAMI MELAYANI -->
+    <section class="section section-soft">
+      <div class="container">
+        <div class="section-heading">
+          <span class="badge">Alur Pelayanan</span>
+          <h2>Bagaimana Kami Membantu Anda?</h2>
+          <p>
+            Berikut langkah umum untuk mengetahui informasi dan
+            mengajukan pemesanan layanan.
+          </p>
+        </div>
+
+        <div class="steps">
+          <div class="step">
+            <span>01</span>
+            <h3>Pilih Layanan</h3>
+            <p>
+              Cari informasi mengenai pemeriksaan atau konsultasi
+              yang sesuai dengan kebutuhan.
+            </p>
+          </div>
+
+          <div class="step">
+            <span>02</span>
+            <h3>Hubungi Kami</h3>
+            <p>
+              Tanyakan biaya, persiapan, area layanan, dan ketersediaan
+              jadwal melalui WhatsApp.
+            </p>
+          </div>
+
+          <div class="step">
+            <span>03</span>
+            <h3>Konfirmasi Jadwal</h3>
+            <p>
+              Pastikan jadwal dan detail layanan telah dikonfirmasi
+              sebelum kunjungan dilakukan.
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- CTA -->
+    <section class="section">
+      <div class="container">
+        <div class="cta">
+          <div>
+            <h2>Mari Kenali Layanan Bidan Hilda</h2>
+            <p>
+              Kami siap membantu Anda mendapatkan informasi mengenai
+              pilihan layanan dan jadwal yang tersedia.
+            </p>
+          </div>
+
+          <a href="#" data-wa class="btn btn-light">
+            Chat WhatsApp ↗
+          </a>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- FOOTER -->
+  <footer class="footer">
+    <div class="container footer-grid">
+      <div>
+        <a href="index.html" class="brand footer-brand">
+          <span class="brand-icon">♡</span>
+          <span>
+            Bidan Hilda
+            <small>HOME CARE & HOME SERVICE</small>
+          </span>
+        </a>
+
+        <p>
+          Informasi layanan pemeriksaan kesehatan dan konsultasi keluarga.
+        </p>
+      </div>
+
+      <div>
+        <h3>Navigasi</h3>
+        <a href="index.html">Beranda</a>
+        <a href="layanan.html">Semua Layanan</a>
+        <a href="tentang-kami.html">Tentang Kami</a>
+        <a href="index.html#cara-pesan">Cara Pemesanan</a>
+        <a href="index.html#faq">FAQ</a>
+      </div>
+
+      <div>
+        <h3>Kontak</h3>
+        <a href="#" data-wa>WhatsApp Bidan Hilda</a>
+        <p>Jadwal dan area layanan dikonfirmasi terlebih dahulu.</p>
+      </div>
+    </div>
+
+    <div class="container copyright">
+      © <span id="year"></span> Bidan Hilda. Hak cipta dilindungi.
+    </div>
+  </footer>
+
+  <!-- FLOATING WHATSAPP -->
+  <a href="#" data-wa class="wa-float" aria-label="WhatsApp">☏</a>
+
+  <script src="script.js"></script>
+  <script>
+    document.getElementById("year").textContent = new Date().getFullYear();
+  </script>
+
+</body>
+</html>

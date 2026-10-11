@@ -1,0 +1,824 @@
+
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Panduan cara memesan layanan home care dan home service Bidan Hilda.">
+  <title>Cara Pemesanan | Bidan Hilda</title>
+  <link rel="stylesheet" href="style.css">
+
+  <style>
+
+    
+/* GOOGLE MAPS - BIDAN HILDA */
+.maps-section {
+  overflow: hidden;
+}
+
+.maps-card {
+  position: relative;
+  overflow: hidden;
+  border-radius: 26px;
+  background: #fff;
+  border: 1px solid rgba(82, 107, 84, 0.16);
+  box-shadow: 0 18px 45px rgba(44, 65, 47, 0.12);
+  transition: transform 0.35s ease, box-shadow 0.35s ease;
+}
+
+.maps-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 24px 55px rgba(44, 65, 47, 0.18);
+}
+
+.maps-header {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+  padding: 24px;
+}
+
+.maps-icon {
+  flex-shrink: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 54px;
+  height: 54px;
+  border-radius: 18px;
+  background: #e7eee4;
+  font-size: 27px;
+}
+
+.maps-header h3 {
+  margin: 0 0 6px;
+}
+
+.maps-header p {
+  margin: 0;
+  line-height: 1.6;
+  color: #687368;
+  font-size: 14px;
+}
+
+.maps-frame {
+  position: relative;
+  height: 400px;
+  overflow: hidden;
+  background: #e7eee4;
+}
+
+.maps-frame iframe {
+  display: block;
+  width: 100%;
+  height: 100%;
+  border: 0;
+}
+
+/* Pin animasi dekoratif */
+.maps-pulse {
+  position: absolute;
+  top: 22px;
+  left: 22px;
+  z-index: 2;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 12px 16px;
+  border: 1px solid rgba(82, 107, 84, 0.15);
+  border-radius: 16px;
+  background: rgba(255, 255, 255, 0.96);
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.12);
+  animation: maps-float 3s ease-in-out infinite;
+  pointer-events: none;
+}
+
+.maps-pulse-dot {
+  position: relative;
+  width: 12px;
+  height: 12px;
+  flex-shrink: 0;
+  border-radius: 50%;
+  background: #688b69;
+}
+
+.maps-pulse-dot::before {
+  content: "";
+  position: absolute;
+  inset: -5px;
+  border: 2px solid #688b69;
+  border-radius: 50%;
+  animation: maps-ping 1.8s ease-out infinite;
+}
+
+.maps-pulse strong {
+  font-size: 13px;
+  color: #344a36;
+}
+
+.maps-footer {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 20px;
+  padding: 24px;
+}
+
+.maps-address {
+  display: flex;
+  gap: 12px;
+  align-items: flex-start;
+  min-width: 0;
+}
+
+.maps-address-icon {
+  font-size: 23px;
+}
+
+.maps-address p {
+  margin: 5px 0 0;
+  line-height: 1.7;
+  color: #687368;
+  font-size: 14px;
+}
+
+.maps-actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  flex-shrink: 0;
+}
+
+.maps-actions .btn {
+  text-align: center;
+}
+
+@keyframes maps-ping {
+  0% {
+    transform: scale(0.7);
+    opacity: 0.9;
+  }
+
+  100% {
+    transform: scale(2.2);
+    opacity: 0;
+  }
+}
+
+@keyframes maps-float {
+  0%, 100% {
+    transform: translateY(0);
+  }
+
+  50% {
+    transform: translateY(-5px);
+  }
+}
+
+@media (max-width: 768px) {
+  .maps-frame {
+    height: 320px;
+  }
+
+  .maps-header,
+  .maps-footer {
+    padding: 20px;
+  }
+
+  .maps-footer {
+    align-items: stretch;
+    flex-direction: column;
+  }
+
+  .maps-actions {
+    width: 100%;
+  }
+
+  .maps-actions .btn {
+    flex: 1;
+  }
+
+  .maps-pulse {
+    top: 12px;
+    left: 12px;
+    padding: 10px 12px;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .maps-pulse,
+  .maps-pulse-dot::before {
+    animation: none;
+  }
+
+  .maps-card {
+    transition: none;
+  }
+}
+
+    .booking-hero {
+      padding: 70px 0;
+    }
+
+    .booking-hero-content {
+      max-width: 760px;
+      margin: auto;
+      text-align: center;
+    }
+
+    .booking-hero-content h1 {
+      margin: 18px 0;
+    }
+
+    .booking-hero-content p {
+      max-width: 650px;
+      margin: 0 auto 25px;
+      line-height: 1.8;
+    }
+
+    .booking-steps {
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: 24px;
+    }
+
+    .booking-step {
+      padding: 28px;
+      border-radius: 22px;
+      background: var(--white, #fff);
+      border: 1px solid rgba(0, 0, 0, 0.07);
+      box-shadow: 0 8px 24px rgba(0, 0, 0, 0.04);
+    }
+
+    .booking-number {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      width: 52px;
+      height: 52px;
+      border-radius: 16px;
+      background: #e7eee4;
+      color: #526b54;
+      font-weight: 700;
+      font-size: 20px;
+      margin-bottom: 20px;
+    }
+
+    .booking-step h3 {
+      margin-bottom: 12px;
+    }
+
+    .booking-step p {
+      line-height: 1.75;
+      margin-bottom: 0;
+    }
+
+    .booking-info-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 28px;
+      align-items: stretch;
+    }
+
+    .booking-panel {
+      padding: 30px;
+      border-radius: 22px;
+      background: #fff;
+      border: 1px solid rgba(0, 0, 0, 0.07);
+    }
+
+    .booking-panel h3 {
+      margin-top: 0;
+      margin-bottom: 18px;
+    }
+
+    .booking-list {
+      padding-left: 22px;
+      margin-bottom: 0;
+    }
+
+    .booking-list li {
+      padding-left: 5px;
+      margin-bottom: 13px;
+      line-height: 1.7;
+    }
+
+    .booking-list li:last-child {
+      margin-bottom: 0;
+    }
+
+    .booking-note {
+      margin-top: 28px;
+      padding: 22px 24px;
+      border-radius: 18px;
+      background: #f7f3e9;
+      line-height: 1.8;
+    }
+
+    .booking-timeline {
+      max-width: 800px;
+      margin: 0 auto;
+    }
+
+    .booking-timeline-item {
+      display: flex;
+      gap: 20px;
+      padding-bottom: 30px;
+    }
+
+    .booking-timeline-item:last-child {
+      padding-bottom: 0;
+    }
+
+    .timeline-dot {
+      flex: 0 0 42px;
+      width: 42px;
+      height: 42px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      border-radius: 50%;
+      background: #e7eee4;
+      color: #526b54;
+      font-weight: 700;
+    }
+
+    .timeline-content h3 {
+      margin: 4px 0 8px;
+    }
+
+    .timeline-content p {
+      margin: 0;
+      line-height: 1.8;
+    }
+
+    .booking-faq {
+      max-width: 850px;
+      margin: 0 auto;
+    }
+
+    .booking-faq details {
+      padding: 20px 22px;
+      margin-bottom: 14px;
+      border-radius: 16px;
+      background: #fff;
+      border: 1px solid rgba(0, 0, 0, 0.08);
+    }
+
+    .booking-faq summary {
+      cursor: pointer;
+      font-weight: 600;
+      line-height: 1.6;
+    }
+
+    .booking-faq details p {
+      margin: 14px 0 0;
+      line-height: 1.8;
+    }
+
+    @media (max-width: 768px) {
+      .booking-steps {
+        grid-template-columns: 1fr;
+      }
+
+      .booking-info-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .booking-hero {
+        padding: 48px 0;
+      }
+
+      .booking-step,
+      .booking-panel {
+        padding: 24px;
+      }
+    }
+  </style>
+</head>
+
+<body>
+
+  <!-- NAVBAR -->
+  <header class="header">
+    <div class="container navbar">
+      <a class="brand" href="index.html">
+        <span class="brand-icon">♡</span>
+        <span>
+          Bidan Hilda
+          <small>HOME CARE & HOME SERVICE</small>
+        </span>
+      </a>
+
+      <button class="menu-toggle" id="menuToggle"
+        aria-label="Buka menu" aria-expanded="false" type="button">☰</button>
+
+      <nav class="nav-links" id="navLinks">
+        <a href="index.html">Beranda</a>
+
+        <div class="dropdown">
+          <a href="layanan.html" class="dropdown-toggle" aria-expanded="false">
+            Layanan <span class="dropdown-arrow">⌄</span>
+          </a>
+
+          <div class="dropdown-menu">
+            <a href="cek-gula-darah.html">Cek Gula Darah</a>
+            <a href="cek-kolesterol.html">Cek Kolesterol</a>
+            <a href="cek-asam-urat.html">Cek Asam Urat</a>
+            <a href="cek-tekanan-darah.html">Cek Tekanan Darah</a>
+            <a href="konsultasi-kesehatan.html">Konsultasi Kesehatan</a>
+            <a href="pemeriksaan-darah-kehamilan.html">Pemeriksaan Darah Kehamilan</a>
+            <a href="konsultasi-kebidanan.html">Konsultasi Kebidanan</a>
+            <a href="kesehatan-ibu-anak.html">Kesehatan Ibu dan Anak</a>
+            <a href="konsultasi-kesehatan-reproduksi.html">Konsultasi Kesehatan Reproduksi</a>
+            <a href="layanan.html" class="dropdown-all">Lihat Semua Layanan →</a>
+          </div>
+        </div>
+
+        <a href="tentang-kami.html">Tentang Kami</a>
+        <a href="cara-pemesanan.html" class="active">Cara Pemesanan</a>
+        <a href="index.html#faq">FAQ</a>
+      </nav>
+
+      <a href="#" data-wa class="btn nav-contact">Hubungi Kami ↗</a>
+    </div>
+  </header>
+
+  <main>
+
+    <!-- HERO -->
+    <section class="hero booking-hero">
+      <div class="container">
+        <div class="booking-hero-content">
+          <span class="badge">♡ Cara Pemesanan</span>
+          <h1>Pesan Layanan dengan Mudah dan <em>Praktis</em></h1>
+          <p>
+            Ikuti langkah-langkah berikut untuk menanyakan dan mengatur
+            jadwal layanan Bidan Hilda. Semua detail layanan akan
+            dikonfirmasi terlebih dahulu melalui WhatsApp.
+          </p>
+
+          <div class="hero-actions" style="justify-content:center;">
+            <a href="layanan.html" class="btn">Pilih Layanan →</a>
+            <a href="#" data-wa class="btn btn-outline">Chat WhatsApp</a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- LANGKAH PEMESANAN -->
+    <section class="section">
+      <div class="container">
+        <div class="section-heading">
+          <span class="badge">Langkah Pemesanan</span>
+          <h2>Hanya Perlu 3 Langkah</h2>
+          <p>
+            Mulai dari memilih layanan sampai mendapatkan konfirmasi jadwal.
+          </p>
+        </div>
+
+        <div class="booking-steps">
+          <article class="booking-step">
+            <div class="booking-number">01</div>
+            <h3>Pilih Layanan</h3>
+            <p>
+              Buka halaman layanan dan pilih pemeriksaan atau konsultasi
+              yang sesuai dengan kebutuhan Anda.
+            </p>
+          </article>
+
+          <article class="booking-step">
+            <div class="booking-number">02</div>
+            <h3>Hubungi WhatsApp</h3>
+            <p>
+              Sampaikan nama, layanan yang diinginkan, lokasi kunjungan,
+              serta waktu yang diharapkan.
+            </p>
+          </article>
+
+          <article class="booking-step">
+            <div class="booking-number">03</div>
+            <h3>Konfirmasi Jadwal</h3>
+            <p>
+              Tanyakan biaya, ketersediaan layanan, dan persiapannya.
+              Pemesanan dilanjutkan setelah detailnya disepakati.
+            </p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- PERSIAPAN PEMESANAN -->
+    <section class="section section-soft">
+      <div class="container">
+        <div class="section-heading">
+          <span class="badge">Sebelum Menghubungi Kami</span>
+          <h2>Informasi yang Perlu Disiapkan</h2>
+          <p>
+            Informasi berikut membantu proses komunikasi dan konfirmasi
+            kebutuhan layanan.
+          </p>
+        </div>
+
+        <div class="booking-info-grid">
+          <div class="booking-panel">
+            <h3>📋 Data Pemesanan</h3>
+            <ul class="booking-list">
+              <li>Nama orang yang melakukan pemesanan.</li>
+              <li>Jenis layanan yang ingin ditanyakan.</li>
+              <li>Alamat atau area lokasi kunjungan.</li>
+              <li>Tanggal dan waktu yang diharapkan.</li>
+              <li>Informasi kebutuhan layanan yang relevan.</li>
+            </ul>
+          </div>
+
+          <div class="booking-panel">
+            <h3>💬 Hal yang Perlu Ditanyakan</h3>
+            <ul class="booking-list">
+              <li>Ketersediaan layanan dan jadwal kunjungan.</li>
+              <li>Biaya layanan dan kemungkinan biaya tambahan.</li>
+              <li>Persiapan sebelum pemeriksaan atau konsultasi.</li>
+              <li>Area yang dapat dijangkau untuk home service.</li>
+              <li>Ketentuan pembatalan atau perubahan jadwal.</li>
+            </ul>
+          </div>
+        </div>
+
+        <div class="booking-note">
+          <strong>Catatan:</strong> Jangan mengirimkan data pribadi atau
+          informasi kesehatan yang tidak diperlukan. Tanyakan terlebih
+          dahulu jika Anda ragu tentang informasi yang perlu diberikan.
+        </div>
+      </div>
+    </section>
+
+    <!-- ALUR SETELAH CHAT -->
+    <section class="section">
+      <div class="container">
+        <div class="section-heading">
+          <span class="badge">Alur Konfirmasi</span>
+          <h2>Setelah Menghubungi WhatsApp</h2>
+          <p>
+            Berikut gambaran umum proses komunikasi sebelum layanan dilakukan.
+          </p>
+        </div>
+
+        <div class="booking-timeline">
+          <div class="booking-timeline-item">
+            <div class="timeline-dot">1</div>
+            <div class="timeline-content">
+              <h3>Sampaikan Kebutuhan</h3>
+              <p>
+                Jelaskan layanan yang ingin ditanyakan dan lokasi
+                yang menjadi tujuan kunjungan.
+              </p>
+            </div>
+          </div>
+
+          <div class="booking-timeline-item">
+            <div class="timeline-dot">2</div>
+            <div class="timeline-content">
+              <h3>Dapatkan Informasi</h3>
+              <p>
+                Konfirmasikan biaya, persiapan, cakupan area, serta
+                ketersediaan jadwal layanan.
+              </p>
+            </div>
+          </div>
+
+          <div class="booking-timeline-item">
+            <div class="timeline-dot">3</div>
+            <div class="timeline-content">
+              <h3>Sepakati Jadwal</h3>
+              <p>
+                Pastikan tanggal, waktu, alamat, dan jenis layanan
+                sudah disetujui oleh kedua pihak.
+              </p>
+            </div>
+          </div>
+
+          <div class="booking-timeline-item">
+            <div class="timeline-dot">4</div>
+            <div class="timeline-content">
+              <h3>Persiapkan Kunjungan</h3>
+              <p>
+                Ikuti informasi persiapan yang telah diberikan
+                untuk layanan yang dipilih.
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+<!-- GOOGLE MAPS LOKASI BIDAN HILDA -->
+<section class="section maps-section" id="lokasi">
+  <div class="container">
+
+    <div class="section-heading">
+      <span class="badge">📍 Lokasi Kami</span>
+      <h2>Temukan Lokasi Bidan Hilda</h2>
+      <p>
+        Lihat lokasi melalui peta interaktif di bawah ini.
+        Gunakan Google Maps untuk melihat lokasi dan mendapatkan
+        petunjuk arah.
+      </p>
+    </div>
+
+    <div class="maps-card">
+
+      <!-- HEADER MAPS -->
+      <div class="maps-header">
+        <div class="maps-icon">📍</div>
+        <div>
+          <h3>Bidan Hilda</h3>
+          <p>Home Care &amp; Home Service</p>
+        </div>
+      </div>
+
+      <!-- PETA INTERAKTIF -->
+      <div class="maps-frame">
+
+        <iframe
+          title="Peta lokasi Bidan Hilda di Bumi Indah Tahap 2"
+          src="https://maps.google.com/maps?q=Bidan%20Hilda%20-%20Bumi%20Indah%20Tahap%202%2C%20Jl.%20Bougenville%20Raya%208%20FH%2015%2C%20Sukamantri%2C%20Pasar%20Kemis%2C%20Kabupaten%20Tangerang%2C%20Banten%2015560&amp;z=16&amp;output=embed"
+          loading="lazy"
+          referrerpolicy="no-referrer-when-downgrade"
+          allowfullscreen>
+        </iframe>
+
+        <!-- ANIMASI LOKASI -->
+        <div class="maps-pulse">
+          <span class="maps-pulse-dot"></span>
+          <strong>Lokasi Bidan Hilda</strong>
+        </div>
+
+      </div>
+
+      <!-- INFORMASI LOKASI -->
+      <div class="maps-footer">
+
+        <div class="maps-address">
+          <span class="maps-address-icon">🏡</span>
+
+          <div>
+            <strong>Bumi Indah Tahap 2</strong>
+            <p>
+              Jl. Bougenville Raya 8 FH 15, Sukamantri,
+              Pasar Kemis, Kabupaten Tangerang, Banten 15560.
+            </p>
+          </div>
+        </div>
+
+        <div class="maps-actions">
+          <a
+            href="https://maps.app.goo.gl/JQr3tfToeGXTXgsy9?g_st=iw"
+            target="_blank"
+            rel="noopener noreferrer"
+            class="btn">
+            Buka Google Maps ↗
+          </a>
+
+          <a
+            href="https://wa.me/6281285145785?text=Halo%20Bidan%20Hilda%2C%20saya%20ingin%20bertanya%20tentang%20lokasi%20dan%20layanan."
+            target="_blank"
+            rel="noopener noreferrer"
+            class="btn btn-outline">
+            Tanya Lokasi
+          </a>
+        </div>
+
+      </div>
+
+    </div>
+
+  </div>
+</section>
+
+    <!-- FAQ -->
+    <section class="section section-soft">
+      <div class="container">
+        <div class="section-heading">
+          <span class="badge">FAQ Pemesanan</span>
+          <h2>Pertanyaan Seputar Pemesanan</h2>
+          <p>
+            Beberapa hal yang sering ingin diketahui sebelum memesan layanan.
+          </p>
+        </div>
+
+        <div class="booking-faq">
+          <details>
+            <summary>Bagaimana cara memesan layanan?</summary>
+            <p>
+              Pilih layanan di website, lalu hubungi WhatsApp Bidan Hilda
+              untuk menanyakan biaya, jadwal, dan ketersediaan layanan.
+            </p>
+          </details>
+
+          <details>
+            <summary>Apakah layanan bisa dilakukan di rumah?</summary>
+            <p>
+              Tanyakan terlebih dahulu apakah layanan yang dipilih tersedia
+              untuk kunjungan ke rumah dan apakah lokasi Anda termasuk
+              area layanan.
+            </p>
+          </details>
+
+          <details>
+            <summary>Bagaimana cara mengetahui biaya layanan?</summary>
+            <p>
+              Biaya dapat ditanyakan melalui WhatsApp. Pastikan juga
+              menanyakan apakah ada biaya tambahan berdasarkan lokasi
+              atau jenis layanan.
+            </p>
+          </details>
+
+          <details>
+            <summary>Apakah jadwal langsung terkonfirmasi setelah chat?</summary>
+            <p>
+              Belum tentu. Tunggu konfirmasi dari pihak layanan dan pastikan
+              tanggal serta waktu sudah disepakati sebelum menganggap
+              pemesanan berhasil.
+            </p>
+          </details>
+
+          <details>
+            <summary>Bagaimana jika ingin mengubah jadwal?</summary>
+            <p>
+              Hubungi WhatsApp untuk menanyakan kemungkinan perubahan
+              jadwal sesegera mungkin.
+            </p>
+          </details>
+        </div>
+      </div>
+    </section>
+
+    <!-- CTA -->
+    <section class="section">
+      <div class="container">
+        <div class="cta">
+          <div>
+            <h2>Siap Menanyakan Layanan?</h2>
+            <p>
+              Hubungi kami untuk memperoleh informasi biaya,
+              ketersediaan layanan, dan jadwal kunjungan.
+            </p>
+          </div>
+
+          <a href="#" data-wa class="btn btn-light">
+            Chat WhatsApp ↗
+          </a>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- FOOTER -->
+  <footer class="footer">
+    <div class="container footer-grid">
+      <div>
+        <a href="index.html" class="brand footer-brand">
+          <span class="brand-icon">♡</span>
+          <span>
+            Bidan Hilda
+            <small>HOME CARE & HOME SERVICE</small>
+          </span>
+        </a>
+        <p>
+          Informasi layanan pemeriksaan kesehatan dan konsultasi keluarga.
+        </p>
+      </div>
+
+      <div>
+        <h3>Navigasi</h3>
+        <a href="index.html">Beranda</a>
+        <a href="layanan.html">Semua Layanan</a>
+        <a href="tentang-kami.html">Tentang Kami</a>
+        <a href="cara-pemesanan.html">Cara Pemesanan</a>
+        <a href="faq.html">FAQ</a>
+      </div>
+
+      <div>
+        <h3>Kontak</h3>
+        <a href="#" data-wa>WhatsApp Bidan Hilda</a>
+        <p>Jadwal dan area layanan dikonfirmasi terlebih dahulu.</p>
+      </div>
+    </div>
+
+    <div class="container copyright">
+      © <span id="year"></span> Bidan Hilda. Hak cipta dilindungi.
+    </div>
+  </footer>
+
+  <!-- FLOATING WHATSAPP -->
+  <a href="#" data-wa class="wa-float" aria-label="WhatsApp">☏</a>
+
+  <script src="script.js"></script>
+  <script>
+    document.getElementById("year").textContent =
+      new Date().getFullYear();
+  </script>
+
+</body>
+</html>
