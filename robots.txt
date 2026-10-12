@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://andikaFebrianNurhidayat.github.io/bidan-hilda-home-care/sitemap.xml
